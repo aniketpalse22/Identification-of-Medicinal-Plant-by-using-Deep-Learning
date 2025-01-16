@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Identification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9; /* Light green background */
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Set container content alignment to left */
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center; /* Center-align the plant name */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Center the image */
+        }
+        p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .btn-container {
+            margin-top: 20px;
+            text-align: center; /* Center-align the buttons */
+        }
+        .btn-container a {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            font-size: 1.2em;
+        }
+        .btn-container a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Identified Plant: {{ plant_name }}</h1>
+        <img src="{{ image_path }}" alt="Uploaded Plant Image">
+        <p><strong>Details:</strong></p>
+        {% if plant %}
+            <p><strong>Botanical Name:</strong> {{ plant.botanical_name }}</p>
+            <p><strong>Family:</strong> {{ plant.family }}</p>
+            <p><strong>Vernacular Names:</strong> {{ plant.vernacular_names }}</p>
+            <p><strong>Introduction:</strong> {{ plant.introduction }}</p>
+            <p><strong>Botanical Description:</strong> {{ plant.botanical_description }}</p>
+            <p><strong>Distribution:</strong> {{ plant.distribution }}</p>
+            <p><strong>Major Chemical Constituents:</strong> {{ plant.major_chemical_constituents }}</p>
+            <p><strong>Properties:</strong> {{ plant.properties }}</p>
+            <p><strong>Part Used:</strong> {{ plant.part_used }}</p>
+            <p><strong>Dosage:</strong> {{ plant.dosage }}</p>
+            <p><strong>Uses:</strong> {{ plant.uses }}</p>
+            <p><strong>Food Recipes:</strong> {{ plant.food_recipes }}</p>
+            <p><strong>Precautions:</strong> {{ plant.precautions }}</p>
+            <p><strong>Mode of Propagation:</strong> {{ plant.mode_of_propagation }}</p>
+            <p><strong>Ayurvedic Formulations:</strong> {{ plant.ayurvedic_formulations }}</p>
+        {% else %}
+            <p>No detailed information available for this plant.</p>
+        {% endif %}
+        <div class="btn-container">
+            <a href="/home">Home</a>
+        </div>
+    </div>
+</body>
+</html>

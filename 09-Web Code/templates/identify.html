@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify Plants</title>
+    <style>
+        body {
+            background-image: url('/static/images/image.png'); /* Set the background image */
+            background-size: cover; /* Ensure the image covers the entire page */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Avoid repetition */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: white;
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Vertically center content */
+            align-items: center; /* Horizontally center content */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Add space below the header */
+            font-size: 2rem;
+        }
+
+        form {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for form */
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add slight shadow for effect */
+            text-align: center;
+        }
+
+        .form-group {
+            display: flex; /* Arrange children side by side */
+            align-items: center; /* Align elements vertically */
+            gap: 10px; /* Add space between the input and button */
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            border: none;
+            font-size: 16px;
+            color: #333;
+            cursor: pointer;
+            flex: 1; /* Allow input to resize proportionally */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .reward-points {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 204, 0, 0.8);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-to-home {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .back-to-home:hover {
+            background-color: #d32f2f;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="reward-points">
+        Reward Points: {{ session['reward_points'] }}
+    </div>
+
+    <h1>Upload an Image to Identify the Plant</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <input type="file" name="image" accept="image/*" required>
+            <button type="submit">Identify</button>
+        </div>
+    </form>
+
+    {% if plant_name %}
+        <h2>Plant Identified: {{ plant_name }}</h2>
+    {% endif %}
+
+    <a href="/home" class="back-to-home">Back to Home</a>
+
+</body>
+</html>

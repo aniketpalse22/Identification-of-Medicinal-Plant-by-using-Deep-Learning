@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Categories</title>
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='images/cat.jpeg') }}');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            color: #f8f8f8;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .home-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+
+        .home-link:hover {
+            background-color: #45a049;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .categories a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            width: 200px;
+            height: 200px;
+            line-height: 150px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            font-size: 1.2em;
+            text-transform: capitalize;
+        }
+
+        .categories a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+<a href="/home" class="home-link">Home</a>
+
+<h1>Plant Categories</h1>
+
+<div class="categories">
+    {% if plant_names %}
+        {% for plant_name in plant_names %}
+            <a href="/details/{{ plant_name | urlencode }}">{{ plant_name }}</a>
+        {% endfor %}
+    {% else %}
+        <p>No plants found.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

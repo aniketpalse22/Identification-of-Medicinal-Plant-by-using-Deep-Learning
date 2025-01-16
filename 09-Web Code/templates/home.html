@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('/static/images/image.png'); /* Set the background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Ensure the background image covers the whole page */
+            height: 100%; /* Ensure the body takes up the full height of the page */
+            font-family: Arial, sans-serif;
+            transition: margin-left 0.3s;
+        }
+        
+        .hamburger-menu {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            left: -250px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding-top: 20px;
+            transition: left 0.3s ease;
+        }
+
+        .sidebar a {
+            padding: 15px;
+            font-size: 18px;
+            color: #333;
+            display: block;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #ddd;
+            color: #4CAF50;
+        }
+
+        .content {
+            padding: 20px;
+            margin-left: 50px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .profile-container img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        .profile-container h3 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #4CAF50;
+        }
+
+        .edit-button {
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .edit-button:hover {
+            background-color: #45a049;
+        }
+
+        .reward-points {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 204, 0, 0.8);
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .reward-points span {
+            color: #4CAF50;
+        }
+
+        .dashboard-widgets {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .widget {
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .widget img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .widget p {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .plant-section {
+            text-align: center;
+            color: #fff;
+            margin-top: 100px;
+        }
+
+        .plant-section h1 {
+            font-size: 3.5rem;
+            color: #2d6a4f;
+            margin-bottom: 20px;
+        }
+
+        .plant-section p {
+            font-size: 1.5rem;
+            color: #0b1550;
+        }
+
+        .gif-container img {
+            width: 200px;
+            height: auto;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+        &#9776;
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="profile-container">
+            <h3>{{ user_name }}</h3> <!-- Profile Name -->
+            <!-- Add this inside the profile-container div -->
+            <button class="edit-button" onclick="window.location.href='/edit_profile'">Edit Profile</button>
+
+        </div>
+
+        <a href="category">Category</a>
+        <a href="identify">Identify</a> <!-- Link to Identify Page -->
+        <a href="history">History</a>
+        <a href="logout">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content" id="main-content">
+
+
+        <!-- Plant Section -->
+        <div class="plant-section">
+            <h1><b>Identification of Medicinal Plants</b></h1>
+            <p>Unlock the secrets of nature’s healing plants. Discover their properties, uses, and benefits for your well-being.</p>
+            <div class="gif-container">
+                <img src="/static/images/tb.gif" alt="Plant Animation"> <!-- Replace with your GIF path -->
+            </div>
+        </div>
+
+        <!-- Button to go to Identify Page -->
+        <div class="text-center">
+            <a href="/identify" class="btn btn-success">Start Plant Identification</a> <!-- Redirect to Identify page -->
+        </div>
+    </div>
+
+    <script>
+        // Toggle sidebar visibility
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var content = document.getElementById("main-content");
+
+            if (sidebar.style.left === "-250px") {
+                sidebar.style.left = "0"; // Show sidebar
+                content.style.marginLeft = "300px"; // Adjust content margin to match sidebar width
+            } else {
+                sidebar.style.left = "-250px"; // Hide sidebar
+                content.style.marginLeft = "50px"; // Reset content margin
+            }
+        }
+    </script>
+
+</body>
+</html>
