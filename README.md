@@ -10,7 +10,50 @@ This project leverages **Machine Learning**, **Deep Learning** and **Image Proce
 ## Objective
 To provide a dependable, efficient, and accessible tool for recognizing medicinal plants, ensuring authenticity and supporting Ayurvedic medicine practices and other peoples (Chemist, Scientists, Students, nature lovers, etc).
 
+---
 
+# Dataset Collection
+
+This dataset consists of **17,000 images**, and after applying data augmentation, **80,000 images** were generated. Due to computational limitations, **20,000 images** were used for training. The dataset includes **22 categories** of medicinal plants as listed below:
+
+- Adulsa  
+- Aloe Vera  
+- Amla  
+- Banana  
+- Betel Leaf (Pan)  
+- Brahmi  
+- Curry Leaves  
+- Drumstick  
+- Eranda  
+- Gokarna  
+- Hibiscus  
+- Jamun (Indian Blackberry)  
+- Mango  
+- Neem  
+- Onion  
+- Panfuti  
+- Papaya  
+- Satyanashi  
+- Shatavari  
+- Sugarcane  
+- Tandulja  
+- Touch Me Not  
+
+### Image Specifications
+- **Image Size:** Resized to `224 x 224` pixels.  
+- **Augmentation Techniques:**
+  1. Rotation  
+  2. Zoom In/Out  
+  3. Brightness Range  
+  4. Rescale  
+
+### Dataset Creation
+This dataset was not sourced from any external platform but was entirely created by a team of 4 members from **Shirwal** and **college**. To upload the dataset to Google Colab, the **Roboflow platform** was utilized.
+
+---
+
+### Below is the Dataset Details
+![Dataset Details](01-Database%20Detail.png)
 
 
 
