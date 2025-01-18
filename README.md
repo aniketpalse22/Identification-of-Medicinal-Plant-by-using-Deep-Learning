@@ -55,7 +55,9 @@ This dataset was not sourced from any external platform but was entirely created
 ### Below is the Dataset Details (01-Dataset Detail.png)
 ![Dataset Details](01-Dataset%20Detail.png)
 
-# Sample Dataset
+---
+
+# Sample Dataset (02-Sample Dataset) 
 
 Below are sample images from the dataset, representing 22 categories of medicinal plants:
 
@@ -96,3 +98,28 @@ Below are sample images from the dataset, representing 22 categories of medicina
   <img src="02-Sample Dataset/Adulsa/Touch Me Not/20241023_153601.jpg" alt="Touch Me Not" width="200" height="200" style="margin: 10px; object-fit: cover;">
 
 </div>
+
+---
+
+# Model
+
+Initially, the accuracy of the model was quite low, around **22%**. However, after implementing various dataset preprocessing techniques and optimizing the model architecture, the accuracy significantly improved.
+
+## Models Used:
+
+1. **ResNet-50**:  
+   - **Accuracy**: 37.25%  
+   - **Epochs**: 25  
+
+2. **VGG-16**:  
+   - **Accuracy**: 92.73%  
+   - **Epochs**: 25  
+
+3. **YOLOv8**:  
+   - **Accuracy**: 92.70%  
+   - **Epochs**: 30  
+
+After achieving accuracy, the models were converted into `.h5` files, and predictions were successfully made. For website implementation, **VGG-16**, with its higher accuracy, was chosen.
+
+---
+
