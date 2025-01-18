@@ -1,1 +1,1 @@
-# Identification-of-Medicinal-Plant-by-using-Deep-Learning
+# Identification of Medicinal Plant by using Deep Learning
