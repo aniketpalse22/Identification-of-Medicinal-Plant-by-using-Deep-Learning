@@ -123,3 +123,44 @@ After achieving accuracy, the models were converted into `.h5` files, and predic
 
 ---
 
+# Website Building
+
+The website for this project is developed using **Flask**, providing an interactive and user-friendly interface. It consists of a total of **10 connected pages**:
+
+## Pages:
+
+1. **Signup**  
+   - <img src="10-Web%20Page%20Images/01-Signup.png" alt="Signup" width="600" height="400">
+
+2. **Login**  
+   - <img src="10-Web%20Page%20Images/02-Login.png" alt="Login" width="600" height="400">
+
+3. **Forgot Password**  
+   - <img src="10-Web%20Page%20Images/03-Forgot%20Password.png" alt="Forgot Password" width="600" height="400">
+
+4. **Home**  
+   - <img src="10-Web%20Page%20Images/04-Home.png" alt="Home" width="600" height="400">
+
+5. **Identify Plants**  
+   - <img src="10-Web%20Page%20Images/05-Identify Plants.png" alt="Identify Plants" width="600" height="400">
+
+6. **Plant Identification**  
+   - <img src="10-Web%20Page%20Images/06-Plant Identification.png" alt="Plant Identification" width="600" height="400">
+
+7. **Plant Categories**   
+   - <img src="10-Web%20Page%20Images/07-Plant Categories.png" alt="Plant Categories" width="600" height="400">
+
+8. **Plant Details**  
+   - <img src="10-Web%20Page%20Images/08-Adulsa Details.png" alt="Plant Details" width="600" height="400">
+
+9. **History**  
+   - <img src="10-Web%20Page%20Images/09-History.png" alt="History" width="600" height="400">
+
+10. **Edit Profile**   
+    - <img src="10-Web%20Page%20Images/10-Edit Profile.png" alt="Edit Profile" width="600" height="400">
+
+---
+
+The website ensures a seamless user experience and integrates the **VGG-16 model** to identify plants effectively.
+
+
