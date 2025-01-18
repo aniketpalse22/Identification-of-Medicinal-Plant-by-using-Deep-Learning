@@ -163,4 +163,43 @@ The website for this project is developed using **Flask**, providing an interact
 
 The website ensures a seamless user experience and integrates the **VGG-16 model** to identify plants effectively.
 
+# Medicinal Plant Information
 
+After identifying the plant, the relevant information is retrieved from **authentic Ayurvedic sources** to ensure the data is genuine and accurate. The information is stored in an **Excel sheet** and then loaded into an **SQL database**. This ensures efficient and reliable access to the plant details for display on the website.
+
+---
+
+# Database Used
+
+This project utilizes **two databases** to manage the required data effectively:
+
+1. **`user_database.db`**  
+   - Contains two tables:
+     - **`users`**: Stores user credentials and profile information.  
+     - **`history`**: Records the history of plant identifications made by each user.  
+
+2. **`plants.db`**  
+   - Contains one table:
+     - **`plant_info`**: Stores detailed information about medicinal plants retrieved from the Ayurvedic source.
+
+---
+
+## Tools and Technologies  
+- **Database**: MySQL (with MySQL Workbench)
+- **Dataset**: Excel  
+- **Coding**: Juypter
+- **Diagrams**: StarUML 
+- **Version Control**: Git  
+- **Programming Language**: Python for Model Building.
+
+___
+
+### Acknowledgment  
+
+We extend our sincere gratitude to our dedicated team members for their hard work and collaboration on this project:  
+- **Aniket Palse (Leader)**  
+- **Soniya Raut**  
+- **Atharva Dholle**  
+- **Sangnik Ghosh**  
+
+This project would not have been possible without their continuous efforts, innovative ideas, and teamwork.  
